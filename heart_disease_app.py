@@ -11,7 +11,7 @@ app = Flask(__name__)
 # Bind home function to URL
 @app.route('/')
 def home():
-    return render_template('disease.html')
+    return render_template('index.html')
 
 # Bind predict function to URL
 @app.route('/predict', methods =['POST'])
@@ -33,10 +33,10 @@ def predict():
     
     # Check the output values and retrive the result with html tag based on the value
     if output == 1:
-        return render_template('disease.html', 
+        return render_template('index.html', 
                                result = 'The patient is likely to have heart disease!')
     else:
-        return render_template('disease.html', 
+        return render_template('index.html', 
                                result = 'The patient is not likely to have heart disease!')
 
 if __name__ == '__main__':
